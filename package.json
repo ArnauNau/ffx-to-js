@@ -1,0 +1,37 @@
+{
+  "name": "ffx-to-js",
+  "version": "0.3.1",
+  "description": "Convert .ffx files into JS-escaped binary strings + ExtendScript wrapper",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "ffx-to-js": "dist/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "bin": "bun run ./bin.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
