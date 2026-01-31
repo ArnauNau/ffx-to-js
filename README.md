@@ -1,7 +1,6 @@
 # ffx-to-js
 
-Convert a binary file (e.g. After Effects `.ffx`) into a JS-escaped binary string,
-optionally wrapped in an ExtendScript helper to recreate the file.
+Convert an After Effects `.ffx` file into a JS-escaped binary string, optionally wrapped in an ExtendScript helper to recreate the file.
 
 ## CLI
 
@@ -35,8 +34,13 @@ import {
   writeBinaryStringToTxt,
 } from "ffx-to-js";
 
+// Returns binary string
 const binary = await fileToBinaryString("./preset.ffx");
+
+// Returns full JS code (binary string + script)
 const script = await fileToFfxScript("./preset.ffx");
+
+// Saves JS code as file
 await writeBinaryStringToTxt("./preset.ffx", "./preset.js");
 ```
 
