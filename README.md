@@ -31,7 +31,7 @@ npm run bin <path>
 import {
   fileToBinaryString,
   fileToFfxScript,
-  writeBinaryStringToTxt,
+  writeBinaryStringToFile,
 } from "ffx-to-js";
 
 // Returns binary string
@@ -41,7 +41,7 @@ const binary = await fileToBinaryString("./preset.ffx");
 const script = await fileToFfxScript("./preset.ffx");
 
 // Saves JS code as file
-await writeBinaryStringToTxt("./preset.ffx", "./preset.js");
+await writeBinaryStringToFile("./preset.ffx", "./preset.js");
 ```
 
 ## Credits

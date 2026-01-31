@@ -3,7 +3,7 @@ import { writeFile } from "node:fs/promises";
 import {
   defaultOutputPathForInput,
   fileToBinaryString,
-  writeBinaryStringToTxt,
+  writeBinaryStringToFile,
 } from "./index.js";
 
 const args = process.argv.slice(2);
@@ -67,7 +67,7 @@ const run = async () => {
     return;
   }
 
-  const writtenPath = await writeBinaryStringToTxt(inputPath, resolvedOutput, {
+  const writtenPath = await writeBinaryStringToFile(inputPath, resolvedOutput, {
     varName,
     fileName,
     resourceFolder,
