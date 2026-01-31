@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { writeFile } from "node:fs/promises";
+import path from "node:path";
 import {
   defaultOutputPathForInput,
   fileToBinaryString,
@@ -23,6 +24,14 @@ if (!inputPath || inputPath === "-h" || inputPath === "--help") {
     ].join("\n"),
   );
   process.exit(inputPath ? 0 : 1);
+}
+
+const inputExt = path.extname(inputPath).toLowerCase();
+if (inputExt !== ".ffx") {
+  console.error(
+    `Error: Input file must be a .ffx file, got "${inputExt || "(no extension)"}".`,
+  );
+  process.exit(1);
 }
 
 let outputPath: string | undefined;
