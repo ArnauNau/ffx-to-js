@@ -39,3 +39,7 @@ const binary = await fileToBinaryString("./preset.ffx");
 const script = await fileToFfxScript("./preset.ffx");
 await writeBinaryStringToTxt("./preset.ffx", "./preset.js");
 ```
+
+## Credits
+
+This is a modern adaptation of RenderTom's [Convert to Binary AE Script](https://bitbucket.org/rendertom/convert-to-binary/src/master/)
