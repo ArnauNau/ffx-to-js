@@ -126,7 +126,7 @@ export async function fileToFfxScript(
   });
 }
 
-export async function writeBinaryStringToTxt(
+export async function writeBinaryStringToFile(
   inputPath: string,
   outputPath?: string,
   options: FfxScriptOptions = {},
